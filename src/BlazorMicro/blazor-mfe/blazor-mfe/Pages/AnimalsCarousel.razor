@@ -6,12 +6,13 @@
 <Container Class="p-0 m-0">
     <Row>
         <Column>
-            <Carousel>
+            <Carousel @bind-SelectedSlide="@selectedSlide">
                 @if (CarouselPayload != null)
                 {
+                    selectedSlide = CarouselPayload.AnimalHooks[0].Id;
                     foreach (var animal in CarouselPayload.AnimalHooks)
                     {
-                        <AnimalsCarouselSlide Animal="animal" OnAnimalSelected="HandleAnimalSelected"/>
+                        <AnimalsCarouselSlide Animal="animal" OnAnimalSelected="@CarouselPayload.OnAnimalSelected" SlideName="@animal.Id"/>
                     }
                 }
             </Carousel>
@@ -22,9 +23,6 @@
 @code {
     [Parameter]
     public CarouselPayload? CarouselPayload { get; set; }
-    
-    private void HandleAnimalSelected(string animalId)
-    {
-        CarouselPayload?.OnAnimalSelected.Invoke(animalId);
-    }
+
+    private string selectedSlide = null!;
 }

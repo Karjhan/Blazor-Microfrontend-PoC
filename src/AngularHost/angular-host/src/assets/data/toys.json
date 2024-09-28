@@ -1,0 +1,97 @@
+[
+    {
+      "id": "fd2f8b3c-f2e8-4cfb-8f7d-3b672bc3d122",
+      "name": "Elephant Plush Toy",
+      "price": 25,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1AyFfrhMr3_N0w9mq0yw1V8yHR5iZofMl",
+        "https://drive.google.com/uc?export=view&id=1UxuICSNA_FZfyU2TuT_yUS-dPkz9T93l"
+      ],
+      "quantity": 50
+    },
+    {
+      "id": "7f343046-c21a-42e6-b830-9f47fd991301",
+      "name": "Tiger Action Figure",
+      "price": 15,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1dvUwxWJIDaYwl8Wkt3Q8h_CJBdI-969u",
+        "https://drive.google.com/uc?export=view&id=1Q1P_R6MKhxtuBRggxsnybTK_zacn2ed5"
+      ],
+      "quantity": 100
+    },
+    {
+      "id": "d86fb962-8ff0-470a-975e-813eebff2e85",
+      "name": "Panda Pillow",
+      "price": 30,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1fHWS7jQU-ckg7XuiYwKXbD_Gi6hiBzwB"
+      ],
+      "quantity": 40
+    },
+    {
+      "id": "c257af44-dba4-4aa4-87f3-8cf9dd0d28c2",
+      "name": "Eagle Plush Toy",
+      "price": 20,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1gwyGcF3_1W0q9mjmocmeHbYK8-Uim9fL"
+      ],
+      "quantity": 60
+    },
+    {
+      "id": "e14a6a47-5565-464e-8d9b-71f0dfc98789",
+      "name": "Condor Figurine",
+      "price": 12,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1EnnZbEwUqZ_WkEMH4ntnWVEBUaTIJ_zT",
+        "https://drive.google.com/uc?export=view&id=17r0pbAR7GmG5nss-HOp7M9BFUTqojaFU"
+      ],
+      "quantity": 80
+    },
+    {
+      "id": "f9a0b29f-e7e3-44d0-bbfa-27a4e8e924f1",
+      "name": "Crane Puppet",
+      "price": 18,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1EI25dlJH5Wx-m9AcgP0bXOupbMxEywIr",
+        "https://drive.google.com/uc?export=view&id=1lxo4bAlKTsJ-rE8vYgJT9c306uibl7rL"
+      ],
+      "quantity": 70
+    },
+    {
+      "id": "f10b663a-9301-41f5-aac5-4dfe765fbf95",
+      "name": "Rhino Wooden Toy",
+      "price": 22,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1AXzuUZ7fwlG-8c5NUrPGy38J89iDghSj"
+      ],
+      "quantity": 30
+    },
+    {
+      "id": "11e4f835-bb46-4ef7-909f-62484a040aeb",
+      "name": "Leopard Plush Toy",
+      "price": 25,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1KcF0kSJ8x1563Omt7xVQpM088vtOb3t_",
+        "https://drive.google.com/uc?export=view&id=1BSpWbbA6wHyBXlYFJwOdnlumfTPuq3-W"
+      ],
+      "quantity": 55
+    },
+    {
+      "id": "884b9e73-4dd2-4234-bf4f-73d408d9ac33",
+      "name": "Eagle Toy Philippine",
+      "price": 10,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1zFv8HrmB2wpCVS-8s5_D5NJOK6I3ne7w"
+      ],
+      "quantity": 120
+    },
+    {
+      "id": "b7e91a88-407d-4d5c-a8b2-8a1cbcf3c283",
+      "name": "Tamarin Plush Toy",
+      "price": 8,
+      "imageUrls": [
+        "https://drive.google.com/uc?export=view&id=1tP3iTO8qUBDUUow6fYjh72-S3bKsH6gN"
+      ],
+      "quantity": 200
+    }
+  ]

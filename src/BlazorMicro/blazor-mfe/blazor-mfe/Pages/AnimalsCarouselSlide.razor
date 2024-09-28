@@ -1,7 +1,8 @@
 ﻿@using Blazorise
 @using blazormfe.Models
+@using Microsoft.JSInterop
 
-<CarouselSlide @onclick="OnSlideClicked">
+<CarouselSlide @onclick="OnSlideClicked" Name="@SlideName">
     <Image Source="@Animal.ImageUrl" Text="@Animal.Name" Display="Display.Block" Width="Width.Is100"/>
 </CarouselSlide>
 
@@ -11,10 +12,13 @@
     
     [Parameter]
     public EventCallback<string> OnAnimalSelected { get; set; }
+    
+    [Parameter]
+    public string SlideName { get; set; } = string.Empty;
 
     private async Task OnSlideClicked()
     {
-        Console.WriteLine($"Blazor -> Animal selected: {Animal.Id}");
+        Console.WriteLine($"Blazor -> Selecting animal: {Animal.Id}");
         
         await OnAnimalSelected.InvokeAsync(Animal.Id);
     }

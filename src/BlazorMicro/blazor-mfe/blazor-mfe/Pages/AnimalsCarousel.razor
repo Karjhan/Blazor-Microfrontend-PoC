@@ -1,0 +1,30 @@
+﻿@page "/"
+
+@using Blazorise
+@using blazormfe.DTOs
+
+<Container Class="p-0 m-0">
+    <Row>
+        <Column>
+            <Carousel>
+                @if (CarouselPayload != null)
+                {
+                    foreach (var animal in CarouselPayload.AnimalHooks)
+                    {
+                        <AnimalsCarouselSlide Animal="animal" OnAnimalSelected="HandleAnimalSelected"/>
+                    }
+                }
+            </Carousel>
+        </Column>
+    </Row>
+</Container>
+
+@code {
+    [Parameter]
+    public CarouselPayload? CarouselPayload { get; set; }
+    
+    private void HandleAnimalSelected(string animalId)
+    {
+        CarouselPayload?.OnAnimalSelected.Invoke(animalId);
+    }
+}

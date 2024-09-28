@@ -1,0 +1,21 @@
+﻿@using Blazorise
+@using blazormfe.Models
+
+<CarouselSlide @onclick="OnSlideClicked">
+    <Image Source="@Animal.ImageUrl" Text="@Animal.Name" Display="Display.Block" Width="Width.Is100"/>
+</CarouselSlide>
+
+@code {
+    [Parameter]
+    public AnimalModel Animal { get; set; } = null!;
+    
+    [Parameter]
+    public EventCallback<string> OnAnimalSelected { get; set; }
+
+    private async Task OnSlideClicked()
+    {
+        Console.WriteLine($"Blazor -> Animal selected: {Animal.Id}");
+        
+        await OnAnimalSelected.InvokeAsync(Animal.Id);
+    }
+}

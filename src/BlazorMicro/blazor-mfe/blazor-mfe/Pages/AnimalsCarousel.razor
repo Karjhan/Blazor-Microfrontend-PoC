@@ -12,7 +12,7 @@
                     selectedSlide = CarouselPayload.AnimalHooks[0].Id;
                     foreach (var animal in CarouselPayload.AnimalHooks)
                     {
-                        <AnimalsCarouselSlide Animal="animal" OnAnimalSelected="@CarouselPayload.OnAnimalSelected" SlideName="@animal.Id"/>
+                        <AnimalsCarouselSlide Animal="animal" SlideName="@animal.Id"/>
                     }
                 }
             </Carousel>

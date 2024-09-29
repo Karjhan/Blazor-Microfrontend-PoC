@@ -15,7 +15,4 @@ public class CarouselPayload
     
     [JsonPropertyName("customSlideCss")]
     public string? CustomSlideCss { get; set; }
-    
-    [JsonPropertyName("onAnimalSelected")]
-    public Action<string> OnAnimalSelected { get; set; } = null!;
 }

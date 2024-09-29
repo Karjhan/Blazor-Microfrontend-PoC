@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -8,6 +8,12 @@ import { IBlazorComponentPayload } from '../blazorUtils/blazorComponentPayload';
 import { IBlazorAnimal } from '../blazorUtils/blazorAnimal';
 import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
 import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar.component";
+
+declare global {
+  interface Window {
+    angularComponentRef: any;
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -26,7 +32,7 @@ import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar
 export class AppComponent implements OnInit {
   title = 'angular-host';
 
-  constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {}
+  constructor(private dataService: DataService, private zone: NgZone) {}
 
   async ngOnInit(): Promise<void> {
     let blazorPayload: IBlazorComponentPayload | undefined;
@@ -40,19 +46,19 @@ export class AppComponent implements OnInit {
     const customCarouselCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarousel.css');
     const customSlideCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarouselSlider.css');
 
-    const onAnimalSelected = (id: string) => {
-      this.dataService.selectAnimal(id);
-      this.cdr.detectChanges();
-      console.log(this.dataService.selectAnimal)
-    }
+    const onAnimalSelected = (id: string) => this.dataService.selectAnimal(id);
 
     blazorPayload = {
       animals: blazorAnimals,
       customCarouselCss: customCarouselCss || '', 
       customSlideCss: customSlideCss || '',
-      onAnimalSelected
     };
 
     setBlazorPayloadParameters(blazorPayload);
+
+    window.angularComponentRef = {
+      zone: this.zone,
+      selectAnimal: (animalId: string) => this.dataService.selectAnimal(animalId),
+    };
   }
 }

@@ -4,5 +4,4 @@ export interface IBlazorComponentPayload{
     animals: IBlazorAnimal[]; 
     customCarouselCss?: string; 
     customSlideCss?: string;
-    onAnimalSelected: (id: string) => void; 
 }

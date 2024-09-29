@@ -8,4 +8,29 @@
 .main{
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,47,121,1) 35%, rgba(0,112,255,1) 100%);
+    padding-top: 76px;
+}
+
+@media (min-width: 576px) { /* Small devices */
+    .main {
+      padding-top: 86px; /* Size for small devices */
+    }
+}
+  
+@media (min-width: 768px) { /* Medium devices */
+    .main {
+      padding-top: 96px; /* Size for medium devices */
+    }
+}
+  
+@media (min-width: 992px) { /* Large devices */
+    .main {
+      padding-top: 106px; /* Size for large devices */
+    }
+}
+  
+@media (min-width: 1200px) { /* Extra large devices */
+    .main{
+      padding-top: 116px; /* Size for extra large devices */
+    }
 }

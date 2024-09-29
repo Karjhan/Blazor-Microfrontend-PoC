@@ -15,5 +15,13 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    function selectAnimalFromBlazor(animalId) {
+      console.log('Blazor -> Passing animalId to Angular:', animalId);
+      window.angularComponentRef.zone.run(() => {
+        window.angularComponentRef.selectAnimal(animalId);
+      });
+    }
+  </script>
 </body>
 </html>

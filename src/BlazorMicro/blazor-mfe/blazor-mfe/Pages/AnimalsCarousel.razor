@@ -3,10 +3,10 @@
 @using Blazorise
 @using blazormfe.DTOs
 
-<Container Class="p-0 m-0">
-    <Row>
-        <Column>
-            <Carousel @bind-SelectedSlide="@selectedSlide">
+<Container Class="w-100 p-0 m-0" Style="max-width: 3000px">
+    <Row Class="w-100 m-0">
+        <Column Class="p-0">
+            <Carousel @bind-SelectedSlide="@selectedSlide" Interval="4000" ShowIndicators="false" ShowControls="false">
                 @if (CarouselPayload != null)
                 {
                     selectedSlide = CarouselPayload.AnimalHooks[0].Id;

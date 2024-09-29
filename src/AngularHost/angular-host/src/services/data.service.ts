@@ -14,14 +14,13 @@ export class DataService {
   public animals: IAnimal[] = [];
   public charities: ICharity[] = [];
   public toys: IToy[] = [];
-  public selectedAnimal: IAnimal | undefined;
 
-  private intervalId: any;
+  public selectedAnimal: IAnimal | undefined;
+  public userToys: IToy[]= [];
 
   constructor() {
     this.loadData();
     this.selectedAnimal = this.animals[0];
-    this.startLoggingSelectedAnimal();
   }
 
   private loadData(): void {
@@ -53,17 +52,5 @@ export class DataService {
     console.log('Selecting animal...');
     this.selectedAnimal = this.animals.find(animal => animal.id === animalId);
     console.log('Selected animal:', this.selectedAnimal);
-  }
-
-  private startLoggingSelectedAnimal(): void {
-    this.intervalId = setInterval(() => {
-      console.log('Selected animal:', this.selectedAnimal);
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
   }
 }

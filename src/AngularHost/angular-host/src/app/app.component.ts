@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -7,14 +7,16 @@ import { cssFileToSingleLineString } from '../commonUtils/utils'
 import { IBlazorComponentPayload } from '../blazorUtils/blazorComponentPayload';
 import { IBlazorAnimal } from '../blazorUtils/blazorAnimal';
 import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
+import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet
-  ],
+    CommonModule,
+    RouterOutlet,
+    CustomNavbarComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas: [
@@ -24,7 +26,7 @@ import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
 export class AppComponent implements OnInit {
   title = 'angular-host';
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private cdr: ChangeDetectorRef) {}
 
   async ngOnInit(): Promise<void> {
     let blazorPayload: IBlazorComponentPayload | undefined;
@@ -38,7 +40,11 @@ export class AppComponent implements OnInit {
     const customCarouselCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarousel.css');
     const customSlideCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarouselSlider.css');
 
-    const onAnimalSelected = this.dataService.selectAnimal;
+    const onAnimalSelected = (id: string) => {
+      this.dataService.selectAnimal(id);
+      this.cdr.detectChanges();
+      console.log(this.dataService.selectAnimal)
+    }
 
     blazorPayload = {
       animals: blazorAnimals,

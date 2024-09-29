@@ -1,0 +1,64 @@
+.icon-container i {
+    font-size: 24px;
+    margin-right: 0.6rem;
+}
+
+.badge-size {
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem; 
+}
+
+.navbar {
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5); 
+    transition: box-shadow 0.3s ease;
+    position: relative; 
+    z-index: 10; 
+}
+
+.navbar:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease; 
+}
+
+.navbar-brand {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem; 
+    font-style: italic; 
+    color: #b1b1b1;
+}
+
+.navbar-brand img:hover {
+    transform: rotate(360deg); 
+}
+
+.logo-image {
+    width: 50px; /* Default size for extra small devices */
+    height: auto; /* Keep aspect ratio */
+  }
+  
+  @media (min-width: 576px) { /* Small devices */
+    .logo-image {
+      width: 60px; /* Size for small devices */
+    }
+  }
+  
+  @media (min-width: 768px) { /* Medium devices */
+    .logo-image {
+      width: 70px; /* Size for medium devices */
+    }
+  }
+  
+  @media (min-width: 992px) { /* Large devices */
+    .logo-image {
+      width: 80px; /* Size for large devices */
+    }
+  }
+  
+  @media (min-width: 1200px) { /* Extra large devices */
+    .logo-image {
+      width: 90px; /* Size for extra large devices */
+    }
+  }

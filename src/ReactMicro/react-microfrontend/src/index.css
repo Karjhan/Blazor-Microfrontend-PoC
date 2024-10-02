@@ -1,28 +1,28 @@
 .charity-image {
-    width: 150px; /* Default size for extra small devices */
+    width: 50% !important; /* Default size for extra small devices */
     height: auto; /* Keep aspect ratio */
   }
   
   @media (min-width: 576px) { /* Small devices */
     .charity-image {
-      width: 250px; /* Size for small devices */
+      width: 60% !important; /* Size for small devices */
     }
   }
   
   @media (min-width: 768px) { /* Medium devices */
     .charity-image {
-      width: 500px; /* Size for medium devices */
+      width: 70% !important; /* Size for medium devices */
     }
   }
   
   @media (min-width: 992px) { /* Large devices */
     .charity-image {
-      width: 600px; /* Size for large devices */
+      width: 85% !important; /* Size for large devices */
     }
   }
   
   @media (min-width: 1200px) { /* Extra large devices */
     .charity-image {
-      width: 700px; /* Size for extra large devices */
+      width: 90% !important; /* Size for extra large devices */
     }
   }

@@ -39,7 +39,7 @@ module.exports = {
 
         remotes: {
           // React microfrontend
-          reactApp: "reactApp@http://localhost:3000/remoteEntry.js",
+          reactApp: "reactMfe@http://localhost:3000/remoteEntry.js",
           // Blazor microfrontend
           blazorApp: "blazorApp@http://localhost:5200/remoteEntry.js",
           // Angular microfrontend
@@ -51,6 +51,8 @@ module.exports = {
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          react: { singleton: true, eager: true, requiredVersion: '^18.3.1' },
+          'react-dom': { singleton: true, eager: true, requiredVersion: '^18.3.1' },
 
           ...sharedMappings.getDescriptors()
         })

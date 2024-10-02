@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { IAnimal } from '../commonUtils/animalModel';
 import { ICharity } from '../commonUtils/charityModel';
 import { IToy } from '../commonUtils/toyModel';
@@ -15,12 +16,14 @@ export class DataService {
   public charities: ICharity[] = [];
   public toys: IToy[] = [];
 
-  public selectedAnimal: IAnimal | undefined;
-  public userToys: IToy[]= [];
+  public selectedAnimalSubject = new BehaviorSubject<IAnimal | undefined>(undefined);
+  public userToys: IToy[] = [];
+
+  public toysModalTrigger: boolean = false;
 
   constructor() {
     this.loadData();
-    this.selectedAnimal = this.animals[0];
+    this.selectedAnimalSubject.next(this.animals[0]);
   }
 
   private loadData(): void {
@@ -48,9 +51,15 @@ export class DataService {
     console.log('Toys loaded:', this.toys);
   }
 
-  public selectAnimal(animalId: string) : void{
+  public selectAnimal(animalId: string): void {
     console.log('Selecting animal...');
-    this.selectedAnimal = this.animals.find(animal => animal.id === animalId);
-    console.log('Selected animal:', this.selectedAnimal);
+    const animal = this.animals.find((animal) => animal.id === animalId);
+    this.selectedAnimalSubject.next(animal); 
+    console.log('Selected animal:', animal);
+  }
+
+  public toggleToysModalTrigger(): void {
+    this.toysModalTrigger = !this.toysModalTrigger;
+    console.log('Toys modal trigger toggled:', this.toysModalTrigger);
   }
 }

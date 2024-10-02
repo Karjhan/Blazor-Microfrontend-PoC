@@ -8,6 +8,7 @@ import { IBlazorComponentPayload } from '../blazorUtils/blazorComponentPayload';
 import { IBlazorAnimal } from '../blazorUtils/blazorAnimal';
 import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
 import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar.component";
+import { ReactComponentComponent } from "../components/react-component/react-component.component";
 
 declare global {
   interface Window {
@@ -21,7 +22,8 @@ declare global {
   imports: [
     CommonModule,
     RouterOutlet,
-    CustomNavbarComponent
+    CustomNavbarComponent,
+    ReactComponentComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -45,8 +47,6 @@ export class AppComponent implements OnInit {
 
     const customCarouselCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarousel.css');
     const customSlideCss = await cssFileToSingleLineString('../assets/blazorCss/blazorCarouselSlider.css');
-
-    const onAnimalSelected = (id: string) => this.dataService.selectAnimal(id);
 
     blazorPayload = {
       animals: blazorAnimals,

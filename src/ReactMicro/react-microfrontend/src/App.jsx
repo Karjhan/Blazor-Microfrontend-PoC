@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CharityDescription from './components/CharityDescription';
+import { Col, Container, Row } from 'react-bootstrap';
 
-function App() {
+function App({ animal, charity, toggleModal }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>
-          <h1>See me now</h1>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container fluid className='w-100 p-0' style={{maxWidth: 3000}}>
+        <Row className='w-100 m-0 justify-content-center'>
+          <Col xs={12} md={4} xl={6} className='p-0'>
+          
+          </Col>
+          <Col xs={12} md={8} xl={6} className='p-0'>
+            <CharityDescription charity={charity} toyId={animal.id} clickToBuyToy={toggleModal}/>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

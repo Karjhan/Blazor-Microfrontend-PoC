@@ -9,6 +9,7 @@ import { IBlazorAnimal } from '../blazorUtils/blazorAnimal';
 import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
 import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar.component";
 import { ReactComponentComponent } from "../components/react-component/react-component.component";
+import { AngularComponentComponent } from "../components/angular-component/angular-component.component";
 
 declare global {
   interface Window {
@@ -23,7 +24,8 @@ declare global {
     CommonModule,
     RouterOutlet,
     CustomNavbarComponent,
-    ReactComponentComponent
+    ReactComponentComponent,
+    AngularComponentComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

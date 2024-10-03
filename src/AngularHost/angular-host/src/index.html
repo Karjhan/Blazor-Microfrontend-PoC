@@ -20,6 +20,10 @@
       console.log('Blazor -> Passing animalId to Angular:', animalId);
       window.angularComponentRef.zone.run(() => {
         window.angularComponentRef.selectAnimal(animalId);
+        const reactComponentSection = document.getElementById('react-component-section');
+        if (reactComponentSection) {
+          reactComponentSection.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     }
   </script>

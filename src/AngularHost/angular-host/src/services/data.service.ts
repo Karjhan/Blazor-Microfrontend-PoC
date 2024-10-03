@@ -19,7 +19,7 @@ export class DataService {
   public selectedAnimalSubject = new BehaviorSubject<IAnimal | undefined>(undefined);
   public userToys: IToy[] = [];
 
-  public toysModalTrigger: boolean = false;
+  public toysModalTriggerSubject = new BehaviorSubject<boolean | undefined>(false);
 
   constructor() {
     this.loadData();
@@ -59,7 +59,14 @@ export class DataService {
   }
 
   public toggleToysModalTrigger(): void {
-    this.toysModalTrigger = !this.toysModalTrigger;
-    console.log('Toys modal trigger toggled:', this.toysModalTrigger);
+    const currentValue = this.toysModalTriggerSubject.value;
+    this.toysModalTriggerSubject.next(!currentValue);
+    console.log('Toys modal trigger toggled:', !currentValue);
+  }
+
+  public getToyById(toyId: string | undefined): IToy | undefined {
+    const toy = this.toys.find(toy => toy.id === toyId);
+    console.log('Found toy: ' + toy);
+    return toy;
   }
 }

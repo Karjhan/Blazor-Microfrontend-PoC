@@ -39,11 +39,11 @@ module.exports = {
 
         remotes: {
           // React microfrontend
-          reactApp: "reactMfe@http://localhost:3000/remoteEntry.js",
+          reactMfe: "reactMfe@http://localhost:3000/remoteEntry.js",
           // Blazor microfrontend
           blazorApp: "blazorApp@http://localhost:5200/remoteEntry.js",
           // Angular microfrontend
-          angularMicroApp: "angularMicroApp@http://localhost:4300/remoteEntry.js",
+          angularMfe: "angularMfe@http://localhost:4300/remoteEntry.js",
         },
 
         shared: share({

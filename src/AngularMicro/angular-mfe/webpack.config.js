@@ -23,9 +23,6 @@ module.exports = {
       extensions: ['.ts', '.js', '.json']
     }
   },
-  experiments: {
-    outputModule: true
-  },
   module: {
     rules: [
         {
@@ -42,10 +39,12 @@ module.exports = {
         },
     ],
   },
+  devServer: {
+    port: 4300, 
+    historyApiFallback: true, 
+  },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
         name: "angularMfe",
         filename: "remoteEntry.js", 
         exposes: {

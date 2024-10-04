@@ -30,6 +30,9 @@ const CharityDescription = ({charity, toyId, clickToBuyToy}) => {
                             <small>{charity.currentStage + " $"}</small>
                             <small>{charity.goalPrice + " $"}</small>
                         </div>
+                        <div className='mb-4'>
+                            <p>Support the charity foundation by purchasing a specific animal toy! <i className="bi bi-award"></i></p>
+                        </div>
                         <div className='m-0 p-0 w-100 d-flex justify-content-center'>
                             <Button onClick={() => clickToBuyToy(toyId)}>Support Us</Button>
                         </div>

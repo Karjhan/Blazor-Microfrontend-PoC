@@ -44,6 +44,8 @@ module.exports = {
           blazorApp: "blazorApp@http://localhost:5200/remoteEntry.js",
           // Angular microfrontend
           angularMfe: "angularMfe@http://localhost:4300/remoteEntry.js",
+          // Vue microfrontend
+          vueMfe: "vueMfe@http://localhost:8080/remoteEntry.js",
         },
 
         shared: share({

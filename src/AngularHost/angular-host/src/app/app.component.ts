@@ -10,6 +10,7 @@ import { setBlazorPayloadParameters } from '../blazorUtils/blazorParameters';
 import { CustomNavbarComponent } from "../components/custom-navbar/custom-navbar.component";
 import { ReactComponentComponent } from "../components/react-component/react-component.component";
 import { AngularComponentComponent } from "../components/angular-component/angular-component.component";
+import { VueComponentComponent } from '../components/vue-component/vue-component.component';
 
 declare global {
   interface Window {
@@ -25,7 +26,8 @@ declare global {
     RouterOutlet,
     CustomNavbarComponent,
     ReactComponentComponent,
-    AngularComponentComponent
+    AngularComponentComponent,
+    VueComponentComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

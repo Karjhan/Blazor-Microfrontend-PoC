@@ -3,7 +3,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { DataService } from '../../services/data.service';
-import { Subscription } from 'rxjs';
+import { combineLatest, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-react-component',
@@ -20,16 +20,16 @@ export class ReactComponentComponent implements AfterViewInit, OnDestroy {
   constructor(private dataService: DataService) {}
 
   async ngAfterViewInit(): Promise<void> {
-    this.subscription = this.dataService.selectedAnimalSubject.subscribe(
-      async (selectedAnimal) => {
-        if (selectedAnimal) {
-          await this.renderReactComponent(selectedAnimal);
-        }
-      }
-    );
+    this.subscription = combineLatest([
+      this.dataService.selectedAnimalSubject,
+      this.dataService.selectedCharitySubject,
+      this.dataService.selectedToySubject
+    ]).subscribe(async ([selectedAnimal, selectedCharity, selectedToy]) => {
+      await this.renderReactComponent(selectedAnimal, selectedCharity);
+    });
   }
 
-  private async renderReactComponent(selectedAnimal: any): Promise<void> {
+  private async renderReactComponent(selectedAnimal: any, selectedCharity: any): Promise<void> {
     const ReactComponentModule = await loadRemoteModule({
       remoteEntry: 'http://localhost:3000/remoteEntry.js',
       remoteName: 'reactMfe',
@@ -37,13 +37,10 @@ export class ReactComponentComponent implements AfterViewInit, OnDestroy {
     });
 
     const ReactComponent = ReactComponentModule.default;
-    const charity = this.dataService.charities.find(
-      (charity) => charity.id === selectedAnimal?.charityId
-    );
 
     const reactElement = React.createElement(ReactComponent, {
       animal: selectedAnimal,
-      charity: charity,
+      charity: selectedCharity,
       toggleModal: () => this.dataService.toggleToysModalTrigger(),
     });
 

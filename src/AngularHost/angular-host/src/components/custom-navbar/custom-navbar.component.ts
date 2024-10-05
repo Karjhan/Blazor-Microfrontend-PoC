@@ -10,4 +10,8 @@ import { DataService } from '../../services/data.service';
 })
 export class CustomNavbarComponent {
   constructor(public dataService: DataService) {}
+
+  public getTotalPurchasesCount(): number{
+    return this.dataService.userPurchases.reduce(function (acc, obj) { return acc + obj.count; }, 0);
+  }
 }

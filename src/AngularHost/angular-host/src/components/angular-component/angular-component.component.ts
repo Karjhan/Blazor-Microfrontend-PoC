@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { DataService } from '../../services/data.service';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { AngularComponentInstance } from '../../angularUtils/angularProps';
+import { IPurchase } from '../../commonUtils/purchaseModel';
 
 @Component({
   selector: 'app-angular-component',
@@ -18,8 +19,7 @@ export class AngularComponentComponent implements AfterViewInit, OnDestroy{
 
   constructor(
     private dataService: DataService,
-    private injector: Injector,
-    private appRef: ApplicationRef,
+    private injector: Injector
   ) {}
 
   async ngAfterViewInit(): Promise<void> {
@@ -50,7 +50,22 @@ export class AngularComponentComponent implements AfterViewInit, OnDestroy{
       });
   
       const instance = componentRef.instance as AngularComponentInstance;
-      instance.data = { toy: this.dataService.getToyById(selectedAnimal.toyId), toggle: this.dataService.toysModalTriggerSubject.value };
+      instance.data = { 
+        toy: this.dataService.getToyById(selectedAnimal.toyId), 
+        toggle: this.dataService.toysModalTriggerSubject.value,
+        onModalClose: () => this.dataService.toysModalTriggerSubject.next(false),
+        addPurchase: (purchase: IPurchase) => {
+          this.dataService.userPurchases.push(purchase); 
+          let charity = this.dataService.selectedCharitySubject.value;
+          let purchasedToy = this.dataService.selectedToySubject.value;
+          if(charity?.currentStage && purchasedToy?.price){
+            charity.currentStage += purchase.count*purchasedToy?.price;
+            purchasedToy.quantity -= purchase.count;
+          }
+          this.dataService.selectedCharitySubject.next(charity);
+          this.dataService.selectedToySubject.next(purchasedToy);
+          console.log(this.dataService.userPurchases);} 
+      };
   
       this.componentRef = componentRef;
     });

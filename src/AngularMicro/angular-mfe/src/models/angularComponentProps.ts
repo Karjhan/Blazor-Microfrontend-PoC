@@ -1,5 +1,5 @@
-import { IPurchase } from "../commonUtils/purchaseModel";
-import { IToy } from "../commonUtils/toyModel";
+import { IPurchase } from "./purchaseModel";
+import { IToy } from "./toyModel";
 
 export interface AngularComponentInstance {
     data: AngularComponentData; 

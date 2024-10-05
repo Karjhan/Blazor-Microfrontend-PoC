@@ -4,36 +4,36 @@
       "name": "Elephant Plush Toy",
       "price": 25,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1AyFfrhMr3_N0w9mq0yw1V8yHR5iZofMl",
-        "https://drive.google.com/uc?export=view&id=1UxuICSNA_FZfyU2TuT_yUS-dPkz9T93l"
+        "https://live.staticflickr.com/65535/54041832639_a8e4237cbb_o_d.png",
+        "https://live.staticflickr.com/65535/54041832604_5cebebddd9_o_d.png"
       ],
       "quantity": 50
     },
     {
       "id": "7f343046-c21a-42e6-b830-9f47fd991301",
-      "name": "Tiger Action Figure",
+      "name": "Bengal Tiger Action Toy",
       "price": 15,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1dvUwxWJIDaYwl8Wkt3Q8h_CJBdI-969u",
-        "https://drive.google.com/uc?export=view&id=1Q1P_R6MKhxtuBRggxsnybTK_zacn2ed5"
+        "https://live.staticflickr.com/65535/54041510011_b72e6bb764_o_d.png",
+        "https://live.staticflickr.com/65535/54041832564_00c2ceeaf6_o_d.png"
       ],
       "quantity": 100
     },
     {
       "id": "d86fb962-8ff0-470a-975e-813eebff2e85",
-      "name": "Panda Pillow",
+      "name": "Panda Pillow Toy",
       "price": 30,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1fHWS7jQU-ckg7XuiYwKXbD_Gi6hiBzwB"
+        "https://live.staticflickr.com/65535/54041832489_6370a41145_o_d.png"
       ],
       "quantity": 40
     },
     {
       "id": "c257af44-dba4-4aa4-87f3-8cf9dd0d28c2",
-      "name": "Eagle Plush Toy",
+      "name": "Harpy Eagle Plastic Toy",
       "price": 20,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1gwyGcF3_1W0q9mjmocmeHbYK8-Uim9fL"
+        "https://live.staticflickr.com/65535/54040644372_4fc41ca890_o_d.png"
       ],
       "quantity": 60
     },
@@ -42,8 +42,8 @@
       "name": "Condor Figurine",
       "price": 12,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1EnnZbEwUqZ_WkEMH4ntnWVEBUaTIJ_zT",
-        "https://drive.google.com/uc?export=view&id=17r0pbAR7GmG5nss-HOp7M9BFUTqojaFU"
+        "https://live.staticflickr.com/65535/54040644377_b4a585163a_o_d.png",
+        "https://live.staticflickr.com/65535/54041760148_bb050514de_o_d.png"
       ],
       "quantity": 80
     },
@@ -52,27 +52,27 @@
       "name": "Crane Puppet",
       "price": 18,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1EI25dlJH5Wx-m9AcgP0bXOupbMxEywIr",
-        "https://drive.google.com/uc?export=view&id=1lxo4bAlKTsJ-rE8vYgJT9c306uibl7rL"
+        "https://live.staticflickr.com/65535/54040644367_808e180759_o_d.png",
+        "https://live.staticflickr.com/65535/54041955810_d5cc77c2de_o_d.png"
       ],
       "quantity": 70
     },
     {
       "id": "f10b663a-9301-41f5-aac5-4dfe765fbf95",
-      "name": "Rhino Wooden Toy",
+      "name": "Rhino Plastic Toy",
       "price": 22,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1AXzuUZ7fwlG-8c5NUrPGy38J89iDghSj"
+        "https://live.staticflickr.com/65535/54041955840_11a5e92ff6_o_d.png"
       ],
       "quantity": 30
     },
     {
       "id": "11e4f835-bb46-4ef7-909f-62484a040aeb",
-      "name": "Leopard Plush Toy",
+      "name": "Amur Leopard Plushy",
       "price": 25,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1KcF0kSJ8x1563Omt7xVQpM088vtOb3t_",
-        "https://drive.google.com/uc?export=view&id=1BSpWbbA6wHyBXlYFJwOdnlumfTPuq3-W"
+        "https://live.staticflickr.com/65535/54041760198_f7c3e482fd_o_d.png",
+        "https://live.staticflickr.com/65535/54040644387_b80a8e581d_o_d.png"
       ],
       "quantity": 55
     },
@@ -81,7 +81,7 @@
       "name": "Eagle Toy Philippine",
       "price": 10,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1zFv8HrmB2wpCVS-8s5_D5NJOK6I3ne7w"
+        "https://live.staticflickr.com/65535/54041509951_780636f362_o_d.png"
       ],
       "quantity": 120
     },
@@ -90,7 +90,7 @@
       "name": "Tamarin Plush Toy",
       "price": 8,
       "imageUrls": [
-        "https://drive.google.com/uc?export=view&id=1tP3iTO8qUBDUUow6fYjh72-S3bKsH6gN"
+        "https://live.staticflickr.com/65535/54041955815_87673a672d_o_d.png"
       ],
       "quantity": 200
     }

@@ -1,0 +1,51 @@
+.count-button{
+    width: 15% !important;
+}
+
+.modal-image {
+    width: 150px; /* Default size for extra small devices */
+    height: auto; /* Keep aspect ratio */
+  }
+  
+  @media (min-width: 576px) { /* Small devices */
+    .modal-image {
+      width: 200px; /* Size for small devices */
+    }
+  }
+  
+  @media (min-width: 768px) { /* Medium devices */
+    .modal-image {
+      width: 250px; /* Size for medium devices */
+    }
+  }
+  
+  @media (min-width: 992px) { /* Large devices */
+    .modal-image {
+      width: 300px; /* Size for large devices */
+    }
+  }
+  
+  @media (min-width: 1200px) { /* Extra large devices */
+    .modal-image {
+      width: 400px; /* Size for extra large devices */
+    }
+  }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+button.count-button {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button.count-button:active {
+  transform: scale(0.95); 
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5); 
+}

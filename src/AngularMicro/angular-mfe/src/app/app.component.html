@@ -1,36 +1,42 @@
 <main class="main">
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  <ng-template #content let-modal *ngIf="data?.toy?.quantity">
+    <div class="modal-header bg-dark text-white">
+      <h4 class="modal-title" id="modal-basic-title">{{data?.toy?.name}}</h4>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
-    <div class="modal-body">
-      <form>
-        <div class="mb-3">
-          <label for="dateOfBirth">Date of birth</label>
-          <div class="input-group">
-            <input
-              id="dateOfBirth"
-              class="form-control"
-              placeholder="yyyy-mm-dd"
-              name="dp"
-              ngbDatepicker
-              #dp="ngbDatepicker"
-            />
-            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
+    <div class="modal-body d-flex justify-content-center bg-dark text-white" *ngIf="data?.toy?.imageUrls">
+      <ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true">
+        <ng-template ngbSlide *ngFor="let image of data?.toy?.imageUrls; trackBy: trackByFn">
+          <div class="picsum-img-wrapper">
+            <img [src]="image" alt="Random slide" class="modal-image"/>
           </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="modal-body bg-dark text-white">
+      <p>The recipient will receive the amounted toy gifts and a plaque with desired message.</p>
+      <p><i>{{data?.toy?.quantity}} on stock</i></p>
+      <hr>
+      <form [formGroup]="purchaseForm">
+        <div class="form-group">
+          <label for="nameFormControlInput1">Recipient Name</label>
+          <input type="text" class="form-control" id="nameFormControlInput1" formControlName="recipientName" [(ngModel)]="purchase.recipientName" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Dedication Message</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="dedicationMessage" [(ngModel)]="purchase.dedicationMessage" rows="3"></textarea>
+        </div>
+        <div class="form-group d-flex justify-content-between align-items-center">
+          <button type="button" class="btn btn-secondary count-button" (click)="decreaseCount()">-</button>
+          <input type="number" class="form-control w-25 text-center" id="numericFormControlInput1" formControlName="count" [(ngModel)]="purchase.count" min="1" max={{data?.toy?.quantity}}>
+          <button type="button" class="btn btn-secondary count-button" (click)="increaseCount()">+</button>
         </div>
       </form>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+    <div class="modal-footer bg-dark text-white d-flex justify-content-between align-items-center">
+      <p><strong>{{this.getModalFooterText()}}</strong></p>
+      <p><i class="text-danger">{{formStatusText}}</i></p>
+      <button type="button" class="btn btn-outline-secondary count-button" (click)="submitPurchase()"><i class="bi bi-basket"></i></button>
     </div>
   </ng-template>
-  
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-  
-  <hr />
-  
-  <pre>{{ closeResult }}</pre>
 </main>
-

@@ -9,6 +9,7 @@
           <th>Recipient</th>
           <th>Count</th>
           <th>Price</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,9 @@
           <td>{{ item.recipientName }}</td>
           <td>{{ `${item.count} pcs` }}</td>
           <td>{{ `${item.toy.price * item.count} $` }}</td>
+          <td>
+            <button @click="deleteItem(item.id)" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -33,6 +37,15 @@ export default {
     basketItems: {
       type: Array,
       required: true
+    },
+    onDeleteItem: {
+      type: Function,
+      required: true
+    }
+  },
+  methods: {
+    deleteItem(id) {
+      this.onDeleteItem(id);
     }
   }
 }

@@ -25,6 +25,7 @@ export class DataService {
   public selectedToySubject = new BehaviorSubject<IToy | undefined>(undefined);
 
   public toysModalTriggerSubject = new BehaviorSubject<boolean | undefined>(false);
+  public basketTriggerSubject = new BehaviorSubject<boolean | undefined>(false);
 
   constructor() {
     this.loadData();

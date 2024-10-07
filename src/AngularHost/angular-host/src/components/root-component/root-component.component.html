@@ -6,12 +6,17 @@
             <app-custom-navbar/>
           </div>
         </div>
-        <div class="row w-100 m-0 justify-content-center">
+        <div class="row w-100 m-0 justify-content-center blazor-container">
           <div class="col-12 p-0">
-            <div #vueContainer></div>
+            <blazor-component class="w-100"></blazor-component>
           </div>
         </div>
+        <div class="row w-100 m-0 justify-content-center">
+          <div class="col-12 p-0">
+            <app-react-component id="react-component-section"/>
+          </div>
+        </div>
+        <app-angular-component/>
       </div>
     </div>
 </main>
-

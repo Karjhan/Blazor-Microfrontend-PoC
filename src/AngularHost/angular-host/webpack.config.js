@@ -55,6 +55,8 @@ module.exports = {
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           react: { singleton: true, eager: true, requiredVersion: '^18.3.1' },
           'react-dom': { singleton: true, eager: true, requiredVersion: '^18.3.1' },
+          vue: { singleton: true, eager: true, requiredVersion: '^3.0.0' },
+          'bootstrap-vue': { singleton: true,eager: true,requiredVersion: '^0.5.1' },
 
           ...sharedMappings.getDescriptors()
         })

@@ -4,6 +4,7 @@ import { DataService } from '../../services/data.service';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { AngularComponentInstance } from '../../angularUtils/angularProps';
 import { IPurchase } from '../../commonUtils/purchaseModel';
+import { IBasketItem } from '../../commonUtils/basketModel';
 
 @Component({
   selector: 'app-angular-component',
@@ -48,6 +49,8 @@ export class AngularComponentComponent implements AfterViewInit, OnDestroy{
       const componentRef = this.componentContainer.createComponent(AngularComponentModule.AppComponent, {
         injector: this.injector,
       });
+
+      let basketItem: IBasketItem | undefined;
   
       const instance = componentRef.instance as AngularComponentInstance;
       instance.data = { 
@@ -64,6 +67,14 @@ export class AngularComponentComponent implements AfterViewInit, OnDestroy{
           }
           this.dataService.selectedCharitySubject.next(charity);
           this.dataService.selectedToySubject.next(purchasedToy);
+          basketItem = {
+            id: purchase.id,
+            recipientName: purchase.recipientName,
+            dedicationMessage: purchase.dedicationMessage,
+            toy: purchasedToy,
+            count: purchase.count
+          };
+          this.dataService.basketItems.push(basketItem);
           console.log(this.dataService.userPurchases);} 
       };
   

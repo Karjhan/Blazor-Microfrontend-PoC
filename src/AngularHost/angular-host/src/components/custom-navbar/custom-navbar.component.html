@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" routerLink="/">
         <img
           src="../../assets/images/navbarLogo.png"
           class="me-2 logo-image"
@@ -11,7 +11,7 @@
       </a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="/basket">
             <span class="icon-container"><i class="bi bi-cart-fill"></i></span>
             <span class="badge badge-pill bg-danger badge-size">{{ getTotalPurchasesCount() }}</span>
           </a>
@@ -19,3 +19,5 @@
       </ul>
     </div>
 </nav>
+
+<router-outlet></router-outlet>

@@ -8,6 +8,7 @@ import animalsData from '../assets/data/animals.json';
 import charitiesData from '../assets/data/charities.json';
 import toysData from '../assets/data/toys.json';
 import { IPurchase } from '../commonUtils/purchaseModel';
+import { IBasketItem } from '../commonUtils/basketModel';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,7 @@ export class DataService {
   public charities: ICharity[] = [];
   public toys: IToy[] = [];
   public userPurchases: IPurchase[] = [];
+  public basketItems: IBasketItem[] = [];
 
   public selectedAnimalSubject = new BehaviorSubject<IAnimal | undefined>(undefined);
   public selectedCharitySubject = new BehaviorSubject<ICharity | undefined>(undefined);

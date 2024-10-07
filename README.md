@@ -16,11 +16,12 @@ integration in the microfrontend architecture.
 
 ### High level plan:
 ![SS_Showcase_1](./screenshots/SS_Showcase_1.png)
-Red - Angular host
-Blue - React informational page
-Purple - Blazor carousel
-Angular Micro - Angular modal
-Vue Micro - Vue basket page
+
+- Red - Angular host
+- Blue - React informational page
+- Purple - Blazor carousel
+- Angular Micro - Angular modal
+- Vue Micro - Vue basket page
 
 ## Installation
 1. Above the list of files, click <>Code.
@@ -76,7 +77,7 @@ Vue Micro - Vue basket page
 
 ## Aditional Information
 In order to make the Blazor component to run integrated, the following had to be done:
-- install the NuGet packages Microsoft.AspNetCore.Components.CustomElements and Microsoft.AspNetCore.Components.Web, which is used for Blazor custom element configuration
+- install the NuGet packages `Microsoft.AspNetCore.Components.CustomElements` and `Microsoft.AspNetCore.Components.Web`, which is used for Blazor custom element configuration
 - In `Program.cs`:
     ```csharp
         builder.RootComponents.RegisterCustomElement<AnimalsCarousel>("blazor-component");
@@ -137,13 +138,13 @@ In order to make the Blazor component to run integrated, the following had to be
 ![SS_Main_Page_1](./screenshots/SS_Main_Page_1.png)
 
 ### Responsive View
-![SS_Main_Page_2](./screenshots/SS_Main_Page_2.jpg)
+![SS_Main_Page_2](./screenshots/SS_Main_Page_2.png)
 
 ### Modal Choice
-![SS_Modal_1](./screenshots/SS_Modal_1.jpg)
+![SS_Modal_1](./screenshots/SS_Modal_1.png)
 
 ### Basket Page
-![SS_Basket_1](./screenshots/SS_Basket_1.jpg)
+![SS_Basket_1](./screenshots/SS_Basket_1.png)
 
 ## Final Note
 This project definetly need improvements and lacks high client complexity. On my list of such improvements,
